@@ -64,9 +64,21 @@ void loop() {
         digitalWrite(pinLedGreen, LOW); // Desliga o LED verde
         Serial.println("Tempo finalizado!");
       }
+
+      // Verifica se a mão foi retirada (sensor para de detectar movimento)
+      if (sensorValue == HIGH) {
+        // Desliga o motor imediatamente (ambos os LEDs desligados)
+        digitalWrite(pinLedRed, LOW);
+        digitalWrite(pinLedGreen, LOW);
+        motorActive = false;  // Desativa o motor
+        Serial.println("Mão retirada, secador desligado.");
+        break;  // Sai do loop
+      }
+
+      // Atualiza a leitura do sensor para verificar se a mão foi retirada
+      sensorValue = digitalRead(pinSensor);
     }
-  }
-  else {
+  } else {
     // Caso não haja movimento, o motor está desligado e o LED verde está apagado
     digitalWrite(pinLedGreen, LOW);
     digitalWrite(pinLedRed, LOW);
