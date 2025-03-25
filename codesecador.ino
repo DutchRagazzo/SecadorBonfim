@@ -84,5 +84,5 @@ void loop() {
     digitalWrite(pinLedRed, LOW);
   }
 
-  delay(3000);  // Pequeno atraso para evitar leituras excessivas
+  delay(5000);  // Pequeno atraso para evitar leituras excessivas
 }
