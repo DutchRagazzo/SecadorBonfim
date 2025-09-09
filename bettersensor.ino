@@ -1,5 +1,5 @@
 const int pinSensor = 2; // MARROM 5V, AZUL GND E PRETO É A PORTA
-const int pinLedRed = 3; // PINO RELÉ
+const int pinLedRed = 5; // PINO RELÉ
 const int pinLedGreen = 13; // PINO LED INDICADOR
 
 bool motorActive = false;
